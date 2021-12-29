@@ -43,7 +43,5 @@ var searchInsert = function(nums, target) {
             else
                 end = mid-1;
         }
-    return start;
-    
-    
+    return start;  
 };
