@@ -16,10 +16,6 @@
 // Output: 2
 // Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
 
-/**
- * @param {number} x
- * @return {number}
- */
  var mySqrt = function(x) {
     let low = 0, high = x/2;
     let mid;
