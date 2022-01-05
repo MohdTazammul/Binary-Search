@@ -25,12 +25,10 @@
         mid = Math.floor(low+(high-low)/2);
         if(mid*mid ==x){
             return mid;
-            // break;
         } 
         else if(mid*mid < x){
             ans = Math.max(ans,mid);
             low = mid+1;
-            // ans = mid;
         } else{
             high = mid-1;
         }
