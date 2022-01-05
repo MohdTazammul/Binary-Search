@@ -15,3 +15,29 @@
 // Input: x = 8
 // Output: 2
 // Explanation: The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.
+
+/**
+ * @param {number} x
+ * @return {number}
+ */
+ var mySqrt = function(x) {
+    let low = 0, high = x/2;
+    let mid;
+    let ans = -1;
+     if(x==1) return 1;
+    while(low<= high){
+        mid = Math.floor(low+(high-low)/2);
+        if(mid*mid ==x){
+            return mid;
+            // break;
+        } 
+        else if(mid*mid < x){
+            ans = Math.max(ans,mid);
+            low = mid+1;
+            // ans = mid;
+        } else{
+            high = mid-1;
+        }
+    }
+    return ans;
+};
