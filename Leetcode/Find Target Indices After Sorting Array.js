@@ -30,3 +30,30 @@
 
 // 1 <= nums.length <= 100
 // 1 <= nums[i], target <= 100
+
+var targetIndices = function(nums, target) {
+    var l= 0, h = nums.length-1;
+    nums.sort(function(a, b){return a - b});
+  while(l<=h)
+  {
+     var mid = Math.floor((l+h)/2);
+     if(target < nums[mid])
+        h = mid-1;
+    else if(target > nums[mid])
+        l = mid+1;
+    else
+    {
+        flag = true;
+        var x=mid;
+        while(nums[--x] == target)
+        {}
+        x++;
+        var count = [];
+        count.push(x);
+        while(nums[++x] == target)
+            count.push(x);
+        return count;
+    }
+  }
+  return [];
+};
