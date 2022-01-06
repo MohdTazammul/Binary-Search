@@ -17,3 +17,25 @@
 
 // 1 <= nums1.length, nums2.length <= 1000
 // 0 <= nums1[i], nums2[i] <= 1000
+
+var intersection = function(nums1, nums2) {
+    var count=[], map = {};
+    for(var i=0; i<nums1.length; i++)
+        {
+            if(map[nums1[i]] == undefined)
+                {
+                    map[nums1[i]] = 0;
+                    var map2= {};
+                    for(var j=0; j<nums2.length; j++)
+                        {
+                            if(map2[nums2[j]] == undefined)
+                                {
+                                    map2[nums2[j]] = 0;
+                                    if(nums1[i] == nums2[j])
+                                        count.push(nums1[i]);
+                                }
+                        }
+                }
+        }
+    return count;
+};
