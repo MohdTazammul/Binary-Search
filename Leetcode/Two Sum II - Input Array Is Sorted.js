@@ -30,3 +30,18 @@
 // numbers is sorted in non-decreasing order.
 // -1000 <= target <= 1000
 // The tests are generated such that there is exactly one solution.
+
+var twoSum = function(numbers, target) {
+    var low = 0, high = numbers.length;
+      while(low <= high)
+          {
+              if(numbers[low]+numbers[high] == target)
+                  break;
+              else if(numbers[low]+numbers[high] < target)
+                  low++;
+              else
+                  high--;
+          }
+      return [low+1, high+1];
+      
+  };
