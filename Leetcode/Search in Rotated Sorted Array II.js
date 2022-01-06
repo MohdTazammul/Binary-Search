@@ -17,3 +17,30 @@
 // Input: nums = [2,5,6,0,0,1,2], target = 3
 // Output: false
 
+
+var search = function(nums, target) {
+    var low = 0, high = nums.length-1;
+    while(low <= high)
+        {
+            var mid = Math.floor(low+(high-low)/2);
+            if(nums[mid] == target || nums[low] == target || nums[high] == target)
+                return true;
+            else if(nums[mid] < nums[high])
+                {
+                    if(nums[mid] < target && nums[high] > target)
+                        low = mid+1
+                    else
+                        high = mid-1;
+                }
+            else if(nums[mid] > nums[high])
+                {
+                     if(target < nums[mid] && target > nums[high])
+                        high = mid-1
+                    else
+                        low = mid+1;
+                }
+            else
+                high--;
+        }
+    return false;
+};
